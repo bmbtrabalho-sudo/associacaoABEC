@@ -10,62 +10,97 @@
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-green-50">
    <!-- Header MOBILE PERFEITO -->
-<header class="bg-white shadow-lg sticky top-0 z-50" id="mainHeader">
-    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <!-- Logo -->
-        <a href="#home" class="flex items-center space-x-3">
-            <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
-                <i class="fas fa-heart text-white text-xl"></i>
-            </div>
-            <div>
-                <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">ABEC</h1>
-                <p class="text-xs text-gray-500">Evelin Caroline</p>
-            </div>
-        </a>
-        
-        <!-- Menu Desktop -->
-        <ul class="hidden lg:flex space-x-8 text-lg">
-            <li><a href="#home" class="menu-link text-blue-600 hover:text-green-600 font-semibold transition-all px-2 py-1 rounded">Início</a></li>
-            <li><a href="#sobre" class="menu-link text-blue-600 hover:text-green-600 font-semibold transition-all px-2 py-1 rounded">Sobre</a></li>
-            <li><a href="#projetos" class="menu-link text-blue-600 hover:text-green-600 font-semibold transition-all px-2 py-1 rounded">Projetos</a></li>
-            <li><a href="#contato" class="menu-link text-blue-600 hover:text-green-600 font-semibold transition-all px-2 py-1 rounded">Contato</a></li>
-        </ul>
-        
-        <!-- Botão Mobile -->
-        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-all">
-            <i class="fas fa-bars text-2xl text-blue-600"></i>
-            <i class="fas fa-times text-2xl text-red-500 hidden"></i>
-        </button>
-    </nav>
+<header class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50" id="mainHeader">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center space-x-3 p-2 -m-2 rounded-xl hover:bg-gray-100 transition-all">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <i class="fas fa-heart text-white text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent whitespace-nowrap">ABEC</h1>
+                    <p class="text-xs text-gray-500 font-medium">Beneficente</p>
+                </div>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center space-x-1">
+                <a href="#home" class="px-4 py-2 text-lg font-semibold text-blue-600 hover:text-green-600 hover:bg-blue-50 rounded-xl transition-all menu-link">Início</a>
+                <a href="#sobre" class="px-4 py-2 text-lg font-semibold text-blue-600 hover:text-green-600 hover:bg-blue-50 rounded-xl transition-all menu-link">Sobre</a>
+                <a href="#projetos" class="px-4 py-2 text-lg font-semibold text-blue-600 hover:text-green-600 hover:bg-blue-50 rounded-xl transition-all menu-link">Projetos</a>
+                <a href="#contato" class="px-4 py-2 text-lg font-semibold text-blue-600 hover:text-green-600 hover:bg-blue-50 rounded-xl transition-all menu-link">Contato</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobileToggle" class="lg:hidden p-3 rounded-xl hover:bg-gray-100 transition-all relative z-50">
+                <i class="fas fa-bars text-2xl text-blue-600 block mobile-bars"></i>
+                <i class="fas fa-times text-2xl text-red-500 absolute inset-0 hidden mobile-close"></i>
+            </button>
+        </div>
+    </div>
     
-    <!-- Menu Mobile -->
-    <div id="mobileMenu" class="lg:hidden bg-white border-t shadow-2xl hidden overflow-hidden">
-        <ul class="px-6 py-6 space-y-4">
-            <li><a href="#home" class="block py-4 px-4 text-xl font-bold text-blue-600 hover:bg-blue-50 rounded-xl transition-all menu-link">🏠 Início</a></li>
-            <li><a href="#sobre" class="block py-4 px-4 text-xl font-bold text-blue-600 hover:bg-blue-50 rounded-xl transition-all menu-link">❤️ Sobre</a></li>
-            <li><a href="#projetos" class="block py-4 px-4 text-xl font-bold text-blue-600 hover:bg-blue-50 rounded-xl transition-all menu-link">✨ Projetos</a></li>
-            <li><a href="#contato" class="block py-4 px-4 text-xl font-bold text-blue-600 hover:bg-blue-50 rounded-xl transition-all menu-link">📞 Contato</a></li>
-        </ul>
-        <!-- WhatsApp direto no menu -->
-        <div class="px-6 pb-6 pt-2">
-            <a href="https://wa.me/5569993358759" target="_blank" class="block w-full bg-gradient-to-r from-green-500 to-green-600 text-white text-center py-4 px-6 rounded-2xl text-lg font-bold hover:shadow-xl transition-all">
-                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="lg:hidden bg-white shadow-2xl border-t border-gray-200 overflow-hidden absolute top-full left-0 right-0 max-h-0 transition-all duration-300 ease-in-out z-40">
+        <div class="px-4 py-8 space-y-4 bg-gradient-to-b from-white to-blue-50">
+            <a href="#home" class="block px-6 py-5 text-xl font-bold text-blue-700 bg-blue-100 hover:bg-blue-200 rounded-2xl transition-all menu-link flex items-center">
+                <i class="fas fa-home mr-4 text-2xl"></i> Início
+            </a>
+            <a href="#sobre" class="block px-6 py-5 text-xl font-bold text-blue-700 bg-blue-100 hover:bg-blue-200 rounded-2xl transition-all menu-link flex items-center">
+                <i class="fas fa-heart mr-4 text-2xl"></i> Sobre Nós
+            </a>
+            <a href="#projetos" class="block px-6 py-5 text-xl font-bold text-blue-700 bg-blue-100 hover:bg-blue-200 rounded-2xl transition-all menu-link flex items-center">
+                <i class="fas fa-star mr-4 text-2xl"></i> Projetos
+            </a>
+            <a href="#contato" class="block px-6 py-5 text-xl font-bold text-blue-700 bg-blue-100 hover:bg-blue-200 rounded-2xl transition-all menu-link flex items-center">
+                <i class="fas fa-phone mr-4 text-2xl"></i> Contato
+            </a>
+            <hr class="border-gray-200 mx-6">
+            <a href="https://wa.me/5569993358759?text=Olá%20ABEC!%20Gostaria%20de%20ajudar!" target="_blank" 
+               class="block w-full bg-gradient-to-r from-green-500 to-green-600 text-white text-xl font-bold py-5 px-6 rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all text-center flex items-center justify-center mx-6">
+                <i class="fab fa-whatsapp mr-3 text-2xl"></i> WhatsApp
             </a>
         </div>
     </div>
 </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-green-500 text-white px-6">
-        <div class="container mx-auto text-center">
-            <h2 class="text-5xl md:text-6xl font-bold mb-8 animate-fade-in">ABEC</h2>
-            <p class="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed">Associação Beneficente Evelin Caroline - Transformando vidas através do amor e solidariedade</p>
-            <div class="space-x-4">
-                <a href="#projetos" class="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-green-100 transition-all duration-300">Conheça Nossos Projetos</a>
-                <a href="https://wa.me/5569993358759" target="_blank" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white hover:text-blue-600 transition-all duration-300">Fale Conosco <i class="fab fa-whatsapp ml-2"></i></a>
-            </div>
+    <!-- Hero Section MOBILE PERFEITO -->
+<section id="home" class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-500 via-blue-600 to-green-500 text-white px-4 pt-20 pb-20">
+    <div class="container mx-auto text-center max-w-4xl">
+        <!-- Título -->
+        <h2 class="text-4xl md:text-6xl font-bold mb-8 drop-shadow-2xl leading-tight">
+            ABEC
+            <span class="block text-2xl md:text-4xl text-blue-200 mt-2">Associação Beneficente</span>
+            <span class="block text-xl md:text-2xl text-white/90 font-light">Evelin Caroline</span>
+        </h2>
+        
+        <!-- Descrição -->
+        <p class="text-lg md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg px-4">
+            Transformando vidas através do amor, solidariedade e cuidado com quem mais precisa
+        </p>
+        
+        <!-- BOTÕES SEM SOBREPOSIÇÃO - MOBILE STACKED -->
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center w-full max-w-2xl mx-auto px-4">
+            <!-- Botão 1 -->
+            <a href="#projetos" class="w-full sm:w-auto bg-white text-blue-600 px-8 py-5 rounded-2xl text-lg md:text-xl font-bold shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-300 flex items-center justify-center min-h-[56px] menu-link">
+                ✨ Conheça Nossos Projetos
+            </a>
+            
+            <!-- Botão 2 -->
+            <a href="https://wa.me/5569993358759?text=Olá!%20Gostaria%20de%20conhecer%20a%20ABEC!" 
+               target="_blank" 
+               class="w-full sm:w-auto border-4 border-white text-white px-8 py-5 rounded-2xl text-lg md:text-xl font-bold hover:bg-white hover:text-blue-600 transition-all duration-300 flex items-center justify-center min-h-[56px] shadow-2xl hover:shadow-3xl hover:-translate-y-2">
+                📱 Fale Conosco
+                <i class="fab fa-whatsapp ml-3 text-xl"></i>
+            </a>
         </div>
-    </section>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl text-white/70"></i>
+        </div>
+    </div>
+</section>
 
     <!-- Sobre -->
     <section id="sobre" class="py-24 px-6">
