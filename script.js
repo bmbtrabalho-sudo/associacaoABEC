@@ -1,26 +1,35 @@
+// MENU MOBILE SIMPLES E FUNCIONAL
 document.addEventListener('DOMContentLoaded', function() {
-    // ========== MENU MOBILE PERFEITO ==========
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileToggle = document.getElementById('mobileToggle');
     const mobileMenu = document.getElementById('mobileMenu');
-    const header = document.getElementById('mainHeader');
+    const barsIcon = document.querySelector('.mobile-bars');
+    const closeIcon = document.querySelector('.mobile-close');
     
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('open');
-            const iconBars = mobileMenuBtn.querySelector('i.fa-bars');
-            const iconTimes = mobileMenuBtn.querySelector('i.fa-times');
-            
-            if (mobileMenu.classList.contains('open')) {
-                iconBars.classList.add('hidden');
-                iconTimes.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Previne scroll
-            } else {
-                iconBars.classList.remove('hidden');
-                iconTimes.classList.add('hidden');
-                document.body.style.overflow = '';
+    // Toggle Menu
+    mobileToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('max-h-screen');
+        barsIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+    });
+    
+    // Smooth Scroll para TODOS os links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
+            // Fecha menu mobile
+            mobileMenu.classList.remove('max-h-screen');
+            barsIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
         });
-    }
+    });
+});
     
     // ========== SMOOTH SCROLL ==========
     document.querySelectorAll('.menu-link').forEach(link => {
