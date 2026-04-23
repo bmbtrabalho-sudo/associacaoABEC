@@ -1,127 +1,132 @@
-/* Animações personalizadas */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Reset e Base */
+* {
+    box-sizing: border-box;
 }
 
-.animate-fade-in {
-    animation: fadeIn 1s ease-out;
-}
-
-/* Scroll suave */
 html {
     scroll-behavior: smooth;
 }
 
-/* Melhorias no Tailwind */
-@layer utilities {
-    .text-shadow {
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+/* Header Mobile Perfeito */
+#mainHeader {
+    transition: all 0.3s ease;
+}
+
+#mainHeader.scrolled {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.95);
+}
+
+/* Menu Mobile */
+#mobileMenu {
+    max-height: 0;
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+    opacity: 0;
+}
+
+#mobileMenu.open {
+    max-height: 500px;
+    opacity: 1;
+    transition: max-height 0.4s ease-in, opacity 0.4s ease-in;
+}
+
+/* Links do menu */
+.menu-link {
+    position: relative;
+}
+
+.menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #2563eb, #16a34a);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu-link:hover::after,
+.menu-link.active::after {
+    width: 100%;
+}
+
+/* Hero Mobile */
+#home {
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+/* Cards Mobile */
+@media (max-width: 768px) {
+    .grid-cols-3 {
+        grid-template-columns: 1fr;
     }
     
-    .hover\:scale-110:hover {
+    .md\\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Correção Localização Mobile */
+@media (max-width: 768px) {
+    /* Remove sobreposição no mapa */
+    .group > * {
+        position: relative;
+        z-index: 10;
+    }
+    
+    iframe {
+        height: 300px !important;
+        border-radius: 12px !important;
+    }
+    
+    /* Espaçamento localização */
+    .overflow-hidden > div:first-child {
+        position: relative;
+        top: 0 !important;
+        right: 0 !important;
+        margin-bottom: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Botões responsivos */
+    .flex-wrap > a {
+        flex: 1 1 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* WhatsApp Mobile */
+@media (max-width: 640px) {
+    [href*="wa.me"] {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Animações */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-down {
+    animation: slideDown 0.6s ease-out;
+}
+
+/* Hover apenas desktop */
+@media (hover: hover) {
+    .group:hover .group-hover\\:scale-110 {
         transform: scale(1.1);
     }
-}
-
-/* Responsividade aprimorada */
-@media (max-width: 768px) {
-    .text-5xl {
-        font-size: 2.5rem;
-    }
-    
-    .text-6xl {
-        font-size: 3rem;
-    }
-}
-
-/* Efeito de parallax sutil */
-.hero-bg {
-    background-attachment: fixed;
-}
-
-/* Botão WhatsApp flutuante */
-.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background: linear-gradient(45deg, #25D366, #128C7E);
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    z-index: 100;
-    transition: all 0.3s ease;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 2px 2px 20px rgba(0,0,0,0.4);
-}
-
-/* Cards com hover melhorado */
-.card-hover {
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.card-hover:hover {
-    transform: translateY(-10px);
-}
-/* Classes adicionais para animações JS */
-.opacity-0 { opacity: 0 !important; }
-.opacity-100 { opacity: 1 !important; }
-.translate-y-0 { transform: translateY(0) !important; }
-.translate-y-10 { transform: translateY(2.5rem) !important; }
-
-.backdrop-blur-md {
-    backdrop-filter: blur(8px);
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-.transition-all {
-    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* Melhoria nos cards hover */
-.group:hover .group-hover\:scale-110 {
-    transform: scale(1.1);
-}
-
-.group:hover .group-hover\:translate-y {
-    transform: translateY(-10px);
-}
-
-/* Responsivo melhorado para mobile */
-@media (max-width: 640px) {
-    .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-        width: 55px;
-        height: 55px;
-        font-size: 26px;
-    }
-}
-/* Estilos para o mapa */
-#abecMap {
-    min-height: 384px;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-#abecMap:hover {
-    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-    transform: translateY(-2px);
-}
-
-/* Loading do mapa */
-.map-loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 384px;
-    background: linear-gradient(45deg, #f0f9ff, #ecfdf5);
 }
