@@ -1,0 +1,127 @@
+/* Animações personalizadas */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Melhorias no Tailwind */
+@layer utilities {
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .hover\:scale-110:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsividade aprimorada */
+@media (max-width: 768px) {
+    .text-5xl {
+        font-size: 2.5rem;
+    }
+    
+    .text-6xl {
+        font-size: 3rem;
+    }
+}
+
+/* Efeito de parallax sutil */
+.hero-bg {
+    background-attachment: fixed;
+}
+
+/* Botão WhatsApp flutuante */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background: linear-gradient(45deg, #25D366, #128C7E);
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 20px rgba(0,0,0,0.4);
+}
+
+/* Cards com hover melhorado */
+.card-hover {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+}
+/* Classes adicionais para animações JS */
+.opacity-0 { opacity: 0 !important; }
+.opacity-100 { opacity: 1 !important; }
+.translate-y-0 { transform: translateY(0) !important; }
+.translate-y-10 { transform: translateY(2.5rem) !important; }
+
+.backdrop-blur-md {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.transition-all {
+    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Melhoria nos cards hover */
+.group:hover .group-hover\:scale-110 {
+    transform: scale(1.1);
+}
+
+.group:hover .group-hover\:translate-y {
+    transform: translateY(-10px);
+}
+
+/* Responsivo melhorado para mobile */
+@media (max-width: 640px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 26px;
+    }
+}
+/* Estilos para o mapa */
+#abecMap {
+    min-height: 384px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+#abecMap:hover {
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+/* Loading do mapa */
+.map-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 384px;
+    background: linear-gradient(45deg, #f0f9ff, #ecfdf5);
+}
