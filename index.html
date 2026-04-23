@@ -9,32 +9,51 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-green-50">
-    <!-- Header -->
-    <header class="bg-white shadow-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <i class="fas fa-heart text-3xl text-green-500"></i>
-                <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">ABEC</h1>
+   <!-- Header MOBILE PERFEITO -->
+<header class="bg-white shadow-lg sticky top-0 z-50" id="mainHeader">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center space-x-3">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+                <i class="fas fa-heart text-white text-xl"></i>
             </div>
-            <ul class="hidden md:flex space-x-8 text-lg">
-                <li><a href="#home" class="text-blue-600 hover:text-green-600 font-semibold transition-all">Início</a></li>
-                <li><a href="#sobre" class="text-blue-600 hover:text-green-600 font-semibold transition-all">Sobre</a></li>
-                <li><a href="#projetos" class="text-blue-600 hover:text-green-600 font-semibold transition-all">Projetos</a></li>
-                <li><a href="#contato" class="text-blue-600 hover:text-green-600 font-semibold transition-all">Contato</a></li>
-            </ul>
-            <button onclick="toggleMenu()" class="md:hidden text-2xl text-blue-600">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-        <div id="mobileMenu" class="md:hidden hidden bg-white border-t">
-            <ul class="px-6 py-4 space-y-4">
-                <li><a href="#home" class="block py-2 text-blue-600 hover:text-green-600 font-semibold">Início</a></li>
-                <li><a href="#sobre" class="block py-2 text-blue-600 hover:text-green-600 font-semibold">Sobre</a></li>
-                <li><a href="#projetos" class="block py-2 text-blue-600 hover:text-green-600 font-semibold">Projetos</a></li>
-                <li><a href="#contato" class="block py-2 text-blue-600 hover:text-green-600 font-semibold">Contato</a></li>
-            </ul>
+            <div>
+                <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">ABEC</h1>
+                <p class="text-xs text-gray-500">Evelin Caroline</p>
+            </div>
+        </a>
+        
+        <!-- Menu Desktop -->
+        <ul class="hidden lg:flex space-x-8 text-lg">
+            <li><a href="#home" class="menu-link text-blue-600 hover:text-green-600 font-semibold transition-all px-2 py-1 rounded">Início</a></li>
+            <li><a href="#sobre" class="menu-link text-blue-600 hover:text-green-600 font-semibold transition-all px-2 py-1 rounded">Sobre</a></li>
+            <li><a href="#projetos" class="menu-link text-blue-600 hover:text-green-600 font-semibold transition-all px-2 py-1 rounded">Projetos</a></li>
+            <li><a href="#contato" class="menu-link text-blue-600 hover:text-green-600 font-semibold transition-all px-2 py-1 rounded">Contato</a></li>
+        </ul>
+        
+        <!-- Botão Mobile -->
+        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-all">
+            <i class="fas fa-bars text-2xl text-blue-600"></i>
+            <i class="fas fa-times text-2xl text-red-500 hidden"></i>
+        </button>
+    </nav>
+    
+    <!-- Menu Mobile -->
+    <div id="mobileMenu" class="lg:hidden bg-white border-t shadow-2xl hidden overflow-hidden">
+        <ul class="px-6 py-6 space-y-4">
+            <li><a href="#home" class="block py-4 px-4 text-xl font-bold text-blue-600 hover:bg-blue-50 rounded-xl transition-all menu-link">🏠 Início</a></li>
+            <li><a href="#sobre" class="block py-4 px-4 text-xl font-bold text-blue-600 hover:bg-blue-50 rounded-xl transition-all menu-link">❤️ Sobre</a></li>
+            <li><a href="#projetos" class="block py-4 px-4 text-xl font-bold text-blue-600 hover:bg-blue-50 rounded-xl transition-all menu-link">✨ Projetos</a></li>
+            <li><a href="#contato" class="block py-4 px-4 text-xl font-bold text-blue-600 hover:bg-blue-50 rounded-xl transition-all menu-link">📞 Contato</a></li>
+        </ul>
+        <!-- WhatsApp direto no menu -->
+        <div class="px-6 pb-6 pt-2">
+            <a href="https://wa.me/5569993358759" target="_blank" class="block w-full bg-gradient-to-r from-green-500 to-green-600 text-white text-center py-4 px-6 rounded-2xl text-lg font-bold hover:shadow-xl transition-all">
+                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+            </a>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-green-500 text-white px-6">
@@ -57,7 +76,7 @@
             </div>
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFIemDCRezNLQjI20LXgap8seZ0UHJqEfeBoRmcHEXiCC85izcJuHceMmUMP6i6inzA2_n4ZLTTByiw-cEZ8o0yyOHWpqWnd1TPRN8SZUybX2-H_pagRknI4VH-XcixDwFBpNGn=w114-h86-k-no" alt="Fundadores Evelin Caroline e Jefferson" class="w-full h-96 object-cover rounded-2xl shadow-2xl mx-auto">
+                    <img src="" alt="Fundadores Evelin Caroline e Jefferson" class="w-full h-96 object-cover rounded-2xl shadow-2xl mx-auto">
                 </div>
                 <div class="space-y-8">
                     <div class="bg-white p-8 rounded-2xl shadow-xl">
@@ -66,7 +85,7 @@
                     </div>
                     <div class="grid grid-cols-3 gap-4 text-center">
                         <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-xl shadow-lg">
-                            <div class="text-3xl font-bold">+100</div>
+                            <div class="text-3xl font-bold">+200</div>
                             <div class="text-sm">Crianças atendidas</div>
                         </div>
                         <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-xl shadow-lg">
@@ -74,7 +93,7 @@
                             <div class="text-sm">Banhos realizados</div>
                         </div>
                         <div class="bg-gradient-to-br from-blue-500 to-green-600 text-white p-6 rounded-xl shadow-lg">
-                            <div class="text-3xl font-bold">+200</div>
+                            <div class="text-3xl font-bold">+100</div>
                             <div class="text-sm">Refeições diárias</div>
                         </div>
                     </div>
@@ -98,7 +117,7 @@
                             <h3 class="text-4xl font-bold text-green-600 mb-6">Banho para Todos</h3>
                             <p class="text-xl text-gray-700 mb-8 leading-relaxed">Nosso projeto mais famoso que leva dignidade e cuidado aos moradores de rua de Porto Velho. Já realizamos centenas de banhos com amor e respeito.</p>
                             <div class="flex space-x-4">
-                                <a href="https://www.instagram.com/reel/DFF7GQkxdqs/" target="_blank" class="bg-green-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-green-700 transition-all">Ver Vídeo <i class="fab fa-instagram ml-2"></i></a>
+                                <a href="https://www.instagram.com/reel/DNS5peKR0qS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="bg-green-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-green-700 transition-all">Ver Vídeo <i class="fab fa-instagram ml-2"></i></a>
                             </div>
                         </div>
                         <div class="md:w-1/2">
